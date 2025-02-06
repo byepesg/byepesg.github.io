@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastián Yepes - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <div id="about"></div>
+        <div id="education"></div>
+        <div id="experience"></div>
+        <div id="projects"></div>
+        <div id="research"></div>
+        <div id="publications"></div>
+        <div id = "teaching"></div>
+        <!-- <div id="skills"></div> -->
+        <!-- <div id="honors"></div> -->
+        <!-- <div id="volunteer"></div> -->
+        <!-- <div id="certifications"></div> -->
+        <div id="contact"></div>
+        
+    </main>
+    <footer>
+        <p>&copy; 2025 Sebastián Yepes García. All rights reserved.</p>
+    </footer>
+    <script>
+        const sections = ["header", "about", "education", "experience", "projects", "research", "publications", "skills", "honors", "volunteer", "certifications", "contact","teaching"];
+        sections.forEach(section => {
+            fetch(`sections/${section}.html`)
+                .then(response => response.text())
+                .then(html => document.getElementById(section).innerHTML = html);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastián Yepes - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: #2f2f2f;
+        }
+        .main {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+        .d1, .d2, .d3, .d4 {
+            position: absolute;
+            background-image: url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+            background-size: 2700px 1500px;
+        }
+        .d1 {
+            height: 30vh;
+            width: 15vw;
+            background-position: 0 50%;
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            animation: dd1 10s 1, dd12 10s 1;
+            animation-delay: 4s, 14s;
+        }
+        .d2 {
+            height: 50vh;
+            width: 25vw;
+            background-position: -10vw 50%;
+            left: 10vw;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            animation: dd2 10s 2;
+            animation-delay: 4s;
+        }
+        .d3 {
+            height: 100vh;
+            width: 40vw;
+            left: 25vw;
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+            background-position: -35vw 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            animation: dd3 10s 2;
+            animation-delay: 4s;
+        }
+        .d4 {
+            height: 80vh;
+            width: 25vw;
+            left: 60vw;
+            background-position: -70vw 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            animation: dd4 10s 2;
+            animation-delay: 4s;
+        }
+        @keyframes dd1 { 50% { width: 95vw; } }
+        @keyframes dd12 { 50% { background-position: Calc(0vw - 40px) 50%; } }
+        @keyframes dd2 { 50% { background-position: Calc(-10vw - 40px) 50%; } }
+        @keyframes dd3 { 50% { background-position: Calc(-35vw - 40px) 50%; } }
+        @keyframes dd4 { 50% { background-position: Calc(-70vw - 40px) 50%; } }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold">Sebastián Yepes</a>
+            <div class="md:flex space-x-6">
+                <a href="#about" class="hover:text-blue-600">About</a>
+                <a href="#education" class="hover:text-blue-600">Education</a>
+                <a href="#experience" class="hover:text-blue-600">Experience</a>
+                <a href="#projects" class="hover:text-blue-600">Projects</a>
+                <a href="#research" class="hover:text-blue-600">Research</a>
+                <a href="#publications" class="hover:text-blue-600">Publications</a>
+                <a href="#teaching" class="hover:text-blue-600">Teaching</a>
+                <a href="#contact" class="hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="main">
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <div class="d3"></div>
+        <div class="d4"></div>
+    </div>
+    
+    <!-- Hero Section -->
+    <header class="h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('hero-bg.jpg');">
+        <div class="bg-black bg-opacity-50 p-8 rounded-md text-white">
+            <h1 class="text-4xl md:text-6xl font-bold">Sebastián Yepes García</h1>
+            <p class="text-xl mt-4">Full Stack Developer | Researcher | Instructor</p>
+        </div>
+    </header>
+    
+    <main class="container mx-auto px-6 py-12 space-y-12">
+        <section id="about" class="text-center"></section>
+        <section id="education" class="bg-gray-200 text-center py-12"></section>
+        <section id="experience" class="text-center"></section>
+        <section id="projects" class="bg-gray-200 text-center py-12"></section>
+        <section id="research" class="text-center"></section>
+        <section id="publications" class="bg-gray-200 text-center py-12"></section>
+        <section id="teaching" class="text-center"></section>
+        <section id="contact" class="text-center"></section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; 2025 Sebastián Yepes García. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const sections = ["about", "education", "experience", "projects", "research", "publications", "teaching", "contact"];
+        sections.forEach(section => {
+            fetch(`sections/${section}.html`)
+                .then(response => response.text())
+                .then(html => document.getElementById(section).innerHTML = html)
+                .catch(error => console.error(`Error loading ${section}:`, error));
+        });
+    </script>
+</body>
+</html>
+
+
