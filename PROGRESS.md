@@ -28,14 +28,19 @@
 
 ---
 
-### Phase 2: Architecture Proposal ⏳
-**Status:** Not started (awaiting Phase 1 approval)  
-**Will include:**
-- Confirmed framework choice
-- Content collection schemas (courses, projects, publications, etc.)
-- Site structure (routes, layouts, components)
-- Design system (colors, spacing, typography)
-- Build + deployment workflow
+### Phase 2: Architecture Proposal ✅
+**Status:** Complete (awaiting approval)  
+**Deliverable:** `PHASE_2_ARCHITECTURE.md`
+**Includes:**
+- ✅ Astro confirmed as framework
+- ✅ Content collection schemas (Zod) for courses, lectures, projects, publications, experience, skills, honors
+- ✅ Site structure (routes, layouts, components, directories)
+- ✅ Design system (colors, spacing, typography, design tokens)
+- ✅ Build + deployment workflow (GitHub Actions)
+- ✅ Mock data examples (courses, lectures, projects, publications)
+- ✅ Component examples (CourseCard, Header)
+- ✅ Homepage wireframe + content rules
+- ✅ Content migration checklist (Phase 18)
 
 ---
 
