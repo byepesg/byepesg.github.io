@@ -1,0 +1,11 @@
+{
+  "slug": "sample-project",
+  "title": "Sample Research Project",
+  "year": 2025,
+  "featured": true,
+  "summary": "A mock project used for scaffolding the new site.",
+  "categories": ["Research", "ML"],
+  "links": {
+    "github": "https://github.com/example/sample-project"
+  }
+}

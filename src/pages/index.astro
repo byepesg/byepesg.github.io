@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getAllProjects } from '../lib/content.js';
+const projects = await getAllProjects();
+---
+<Layout>
+  <main class="p-6 max-w-3xl mx-auto">
+    <h1 class="text-3xl font-semibold">Sebastián Yepes</h1>
+    <p class="text-gray-700 mt-2">Professor · Researcher · Software Engineer</p>
+
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold">Featured Projects</h2>
+      <ul class="mt-4 space-y-4">
+        {projects.slice(0,3).map(project => (
+          <li class="border p-4 rounded-md">
+            <a href={`/engineering/projects/${project.slug}`}>{project.title}</a>
+            <p class="text-sm text-gray-600">{project.summary}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</Layout>
