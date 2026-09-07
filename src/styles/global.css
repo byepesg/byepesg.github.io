@@ -1,1 +1,36 @@
-@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root{\n  --color-primary: #42A5F6;\n  --color-black: #000000;\n  --color-white: #ffffff;\n  --neutral-100: #F8FAFC;\n  --neutral-200: #F1F5F9;\n  --neutral-300: #E2E8F0;\n  --neutral-400: #CBD5E1;\n  --neutral-500: #94A3B8;\n  --neutral-600: #64748B;\n  --neutral-700: #475569;\n  --neutral-800: #334155;\n  --neutral-900: #0F172A;\n}\n\nhtml,body{\n  @apply bg-white text-black antialiased;\n}\n\na{\n  color: var(--color-primary);\n}\n\n/* Basic content max width */\n.main-container{\n  max-width: 56rem;\n  margin-left: auto;\n  margin-right: auto;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --color-primary: #42A5F6;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --neutral-100: #F8FAFC;
+  --neutral-200: #F1F5F9;
+  --neutral-300: #E2E8F0;
+  --neutral-400: #CBD5E1;
+  --neutral-500: #94A3B8;
+  --neutral-600: #64748B;
+  --neutral-700: #475569;
+  --neutral-800: #334155;
+  --neutral-900: #0F172A;
+}
+
+html,body{
+  @apply bg-white text-black antialiased;
+}
+
+a{
+  color: var(--color-primary);
+}
+
+/* Basic content max width */
+.main-container{
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
