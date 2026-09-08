@@ -1,0 +1,12 @@
+{
+  "slug": "programming-iii-2026-ii",
+  "title": "Programming III",
+  "semester": "2026-II",
+  "active": true,
+  "featured": true,
+  "summary": "Advanced data structures and algorithms with practical software engineering projects.",
+  "lectures": [
+    { "number": 1, "title": "Introduction & Course Overview", "date": "2026-08-24" },
+    { "number": 2, "title": "Advanced Trees", "date": "2026-08-31" }
+  ]
+}
