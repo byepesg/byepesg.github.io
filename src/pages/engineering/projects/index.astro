@@ -1,0 +1,29 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+const projectModules = await Astro.glob('../../../content/projects/*.md');
+const projects = projectModules.map(module => ({
+  ...module.frontmatter,
+  slug: module.frontmatter.slug || module.file.split('/').pop().replace(/\.md$/, '')
+}));
+---
+<Layout>
+  <main class="main-container py-12">
+    <h1 class="text-3xl font-semibold">Engineering Projects</h1>
+    <div class="mt-8 grid gap-6">
+      {projects.map(project => (
+        <article class="border rounded-lg p-5">
+          <div class="flex items-center justify-between gap-4">
+            <h2 class="text-xl font-semibold"><a href={`/engineering/projects/${project.slug}`}>{project.title}</a></h2>
+            <span class="text-sm text-gray-600">{project.year}</span>
+          </div>
+          <p class="mt-3 text-gray-700">{project.summary}</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            {project.categories?.map(category => (
+              <span class="text-xs border rounded-full px-2 py-1">{category}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+</Layout>
