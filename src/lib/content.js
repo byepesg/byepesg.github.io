@@ -3,7 +3,7 @@ import path from 'path';
 import { validateProject } from './schemas/projectSchema.js';
 import { validateCourse } from './schemas/courseSchema.js';
 
-const projectsDir = path.resolve('./src/content/projects');
+const projectsDir = path.resolve('./src/data/projects');
 const coursesDir = path.resolve('./src/content/courses');
 
 function loadJsonFiles(dir) {
