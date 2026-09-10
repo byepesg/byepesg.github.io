@@ -1,15 +1,15 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 
-const projectModules = await Astro.glob('../../../content/projects/*.md');
-
 export async function getStaticPaths() {
+  const projectModules = await Astro.glob('../../../content/projects/*.md');
   return projectModules.map(module => {
     const slug = module.frontmatter.slug || module.file.split('/').pop().replace(/\.md$/, '');
     return { params: { slug } };
   });
 }
 
+const projectModules = await Astro.glob('../../../content/projects/*.md');
 const { slug } = Astro.params;
 const project = projectModules.find(module => {
   const frontmatterSlug = module.frontmatter.slug || module.file.split('/').pop().replace(/\.md$/, '');
