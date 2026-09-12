@@ -1,9 +1,35 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getAllCourses } from '../../lib/content.js';
+
+const courses = (await getAllCourses()).sort((a, b) => {
+  return (b.semester || '').localeCompare(a.semester || '') || a.title.localeCompare(b.title);
+});
 ---
 <Layout>
-  <main class="p-6 max-w-3xl mx-auto">
-    <h1 class="text-2xl font-semibold">Academic</h1>
-    <p class="mt-4 text-gray-700">Teaching and academic activities.</p>
+  <main class="main-container py-12">
+    <header>
+      <p class="text-sm uppercase tracking-[0.18em] text-slate-500">Academic</p>
+      <h1 class="mt-2 text-3xl font-semibold">Teaching and academic work</h1>
+    </header>
+
+    <section class="mt-8 space-y-5">
+      {courses.map(course => (
+        <article class="rounded-xl border border-slate-200 p-5">
+          <div class="flex items-center justify-between gap-4">
+            <h2 class="text-xl font-semibold">{course.title}</h2>
+            <span class="text-xs uppercase tracking-[0.16em] text-slate-500">{course.semester}</span>
+          </div>
+          <p class="mt-3 text-slate-700">{course.summary}</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {course.lectures?.slice(0, 3).map(lecture => (
+              <span class="rounded-full border border-slate-200 px-2.5 py-1 text-xs text-slate-600">
+                {lecture.title || `Lecture ${lecture.number}`}
+              </span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </section>
   </main>
 </Layout>

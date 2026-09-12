@@ -1,30 +1,37 @@
 ---
 import '../styles/global.css';
-const {children} = Astro.props;
+import { site } from '../config/site';
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sebastián Yepes</title>
+    <meta name="description" content={site.description} />
+    <title>{site.name}</title>
   </head>
   <body class="bg-white text-black font-sans">
-    <header class="border-b py-4">
-      <div class="max-w-3xl mx-auto px-4 flex items-center justify-between">
-        <a href="/" class="font-medium">Sebastián Yepes</a>
-        <nav>
-          <a href="/academic" class="mr-4">Academic</a>
-          <a href="/engineering" class="mr-4">Engineering</a>
-          <a href="/research" class="mr-4">Research</a>
-          <a href="/about">About</a>
+    <header class="border-b border-slate-200 py-4">
+      <div class="main-container flex items-center justify-between gap-4">
+        <a href="/" class="font-medium text-black">{site.name}</a>
+        <nav class="flex flex-wrap items-center gap-4 text-sm text-slate-700">
+          {site.nav.map(item => (
+            <a href={item.href} class="hover:text-blue-500">{item.label}</a>
+          ))}
         </nav>
       </div>
     </header>
 
     <slot />
 
-    <footer class="border-t mt-12 py-6">
-      <div class="max-w-3xl mx-auto px-4 text-sm text-gray-600">© Sebastián Yepes</div>
+    <footer class="border-t border-slate-200 mt-12 py-8">
+      <div class="main-container flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-sm text-slate-600">
+        <p>© {new Date().getFullYear()} {site.name}</p>
+        <div class="flex flex-wrap gap-4">
+          {Object.entries(site.socials).map(([label, href]) => (
+            <a href={href} target="_blank" rel="noreferrer" class="hover:text-blue-500 capitalize">{label}</a>
+          ))}
+        </div>
+      </div>
     </footer>
   </body>
 </html>

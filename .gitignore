@@ -25,3 +25,7 @@ Thumbs.db
 coverage/
 # Misc
 *.tgz
+
+# Astro generated types
+src/env.d.ts
+*.tsbuildinfo
