@@ -1,18 +1,19 @@
 ---
-title: "Towards Human-Centered Research Software for Learning Systems"
+title: "Differentially Private Compression and the Sensitivity of LZ77"
 year: 2025
-venue: "ACM SIGCSE"
+venue: "TCC 2025"
 featured: true
 type: "Conference Paper"
 authors:
-  - Sebastián Yepes
-  - A. Researcher
+  - J. Blocki
+  - S. Lee
+  - B. Yepes
 links:
   doi: https://doi.org/10.1000/example
   pdf: https://example.com/paper.pdf
 ---
 
-This sample publication illustrates how academic work can be surfaced as structured metadata and rendered on a dedicated research page.
+This publication reflects Sebastián Yepes's research interests in differential privacy, compression algorithms, and cryptographic foundations.
 
 ## Summary
-It combines software engineering principles with learning and accessibility criteria to support more thoughtful digital systems in education.
+The work studies the sensitivity of LZ77 compression under differential privacy constraints and contributes to the theoretical understanding of private compression for information-theoretic settings.
