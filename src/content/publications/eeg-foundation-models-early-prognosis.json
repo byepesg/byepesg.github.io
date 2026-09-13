@@ -1,0 +1,16 @@
+{
+  "slug": "eeg-foundation-models-early-neurological-prognosis",
+  "title": "EEG Foundation Models for Early Neurological Prognosis After Cardiac Arrest",
+  "year": 2026,
+  "venue": "SIPAIM",
+  "featured": true,
+  "type": "Preprint / submission",
+  "authors": [
+    "Brayan Sebastián Yepes-Garcia"
+  ],
+  "links": {
+    "paper": "https://arxiv.org/",
+    "source": "https://github.com/byepesg"
+  },
+  "abstract": "This work evaluates LaBraM, BENDR, EEGPT, and CBraMod for early neurological prognosis using EEG recordings acquired in the first 24–32 hours after cardiac arrest."
+}

@@ -1,6 +1,10 @@
 ---
 import '../styles/global.css';
 import { site } from '../config/site';
+import { getInnovatrixProfile } from '../lib/content.js';
+
+const innovatrix = await getInnovatrixProfile();
+const visibleNav = site.nav.filter(item => item.href !== '/innovatrix' || innovatrix.enabled !== false);
 ---
 <html lang="en">
   <head>
@@ -8,30 +12,68 @@ import { site } from '../config/site';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={site.description} />
     <title>{site.name}</title>
+    <script is:inline>
+      (() => {
+        const saved = localStorage.getItem('theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        const theme = saved || preferred;
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
   </head>
-  <body class="bg-white text-black font-sans">
-    <header class="border-b border-slate-200 py-4">
+  <body class="bg-white text-slate-900 antialiased transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100 font-sans">
+    <header class="border-b border-slate-200 bg-white/90 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-950/90 py-4">
       <div class="main-container flex items-center justify-between gap-4">
-        <a href="/" class="font-medium text-black">{site.name}</a>
-        <nav class="flex flex-wrap items-center gap-4 text-sm text-slate-700">
-          {site.nav.map(item => (
-            <a href={item.href} class="hover:text-blue-500">{item.label}</a>
-          ))}
-        </nav>
+        <a href="/" class="font-medium text-slate-900 dark:text-slate-100">{site.name}</a>
+        <div class="flex items-center gap-3">
+          <nav class="flex flex-wrap items-center gap-4 text-sm text-slate-700 dark:text-slate-300">
+            {visibleNav.map(item => (
+              <a href={item.href} class="hover:text-blue-500 dark:hover:text-sky-400">{item.label}</a>
+            ))}
+          </nav>
+          <button
+            id="themeToggle"
+            type="button"
+            class="rounded-full border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.12em] text-slate-700 transition hover:border-blue-500 hover:text-blue-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-300"
+          >
+            Dark
+          </button>
+        </div>
       </div>
     </header>
 
     <slot />
 
-    <footer class="border-t border-slate-200 mt-12 py-8">
-      <div class="main-container flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-sm text-slate-600">
+    <footer class="mt-12 border-t border-slate-200 py-8 dark:border-slate-800">
+      <div class="main-container flex flex-col gap-4 text-sm text-slate-600 md:flex-row md:items-center md:justify-between dark:text-slate-400">
         <p>© {new Date().getFullYear()} {site.name}</p>
         <div class="flex flex-wrap gap-4">
           {Object.entries(site.socials).map(([label, href]) => (
-            <a href={href} target="_blank" rel="noreferrer" class="hover:text-blue-500 capitalize">{label}</a>
+            <a href={href} target="_blank" rel="noreferrer" class="capitalize hover:text-blue-500 dark:hover:text-sky-300">{label}</a>
           ))}
         </div>
       </div>
     </footer>
+
+    <script>
+      const themeToggle = document.getElementById('themeToggle');
+      const applyTheme = (theme) => {
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        document.documentElement.style.colorScheme = theme;
+        if (themeToggle) {
+          themeToggle.textContent = theme === 'dark' ? 'Light' : 'Dark';
+        }
+      };
+
+      const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+
+      themeToggle?.addEventListener('click', () => {
+        const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+        localStorage.setItem('theme', next);
+        applyTheme(next);
+      });
+    </script>
   </body>
 </html>

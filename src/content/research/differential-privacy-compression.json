@@ -1,0 +1,8 @@
+{
+  "slug": "differential-privacy-compression",
+  "title": "Differentially Private Compression and the Sensitivity of LZ77",
+  "year": 2026,
+  "summary": "Conference chapter from TCC 2025 evaluating the sensitivity of LZ77 under differential privacy constraints.",
+  "localFile": "tcc-2025-differentially-private-compression.pdf",
+  "externalHref": "https://doi.org/10.1007/978-3-032-12290-2_12"
+}

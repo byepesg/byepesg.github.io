@@ -1,0 +1,54 @@
+{
+  "title": "Academic profile",
+  "summary": "Researcher, educator, and engineer focused on AI, data structures, deep learning, and applied machine learning for scientific and biomedical problems.",
+  "education": [
+    {
+      "degree": "M.Sc. in Systems and Computing Engineering",
+      "institution": "Universidad Nacional de Colombia",
+      "period": "In progress",
+      "details": "Graduate studies in computing systems, algorithms, and intelligent systems, with an emphasis on research-oriented development."
+    },
+    {
+      "degree": "B.E. in Systems and Computing Engineering",
+      "institution": "Universidad Nacional de Colombia",
+      "period": "Completed",
+      "details": "Foundational training in software engineering, systems design, algorithms, data structures, and computing theory."
+    },
+    {
+      "degree": "Bachelor in Physics",
+      "institution": "Universidad Distrital Francisco José de Caldas",
+      "period": "Completed",
+      "details": "Strong analytical base in mathematics, modeling, scientific reasoning, and quantitative problem-solving."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Visiting Research Scholar",
+      "institution": "Purdue University",
+      "period": "Academic collaboration",
+      "details": "A significant academic collaboration that strengthened research work in machine learning, privacy, and computational methods."
+    },
+    {
+      "title": "Researcher in deep learning and biomedical signal processing",
+      "institution": "Multicenter EEG prognosis studies",
+      "period": "Current",
+      "details": "Focused on EEG-based neurological outcome prediction after cardiac arrest using foundation models, representation learning, and robust experimental design."
+    }
+  ],
+  "teaching": [
+    {
+      "title": "Data Structures",
+      "institution": "Universidad Nacional de Colombia",
+      "period": "2026-II",
+      "details": "Course design and instruction centered on algorithmic thinking, abstraction, and efficient problem-solving."
+    }
+  ],
+  "researchInterests": [
+    "Deep learning",
+    "Foundation models",
+    "Biomedical signal processing",
+    "EEG representation learning",
+    "Privacy-preserving machine learning",
+    "Algorithms and computational modeling"
+  ]
+}

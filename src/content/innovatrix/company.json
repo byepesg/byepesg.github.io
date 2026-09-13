@@ -1,0 +1,65 @@
+{
+  "name": "Innovatrix",
+  "tagline": "AI innovation studio building applied intelligence products, digital experiences, and technology ventures.",
+  "description": "Innovatrix is the entrepreneurial arm focused on translating research, product thinking, and AI capabilities into practical solutions for real-world problems.",
+  "website": "https://innovatrix.technology/",
+  "instagram": "https://instagram.com/innovatrix.technology",
+  "email": "admin@innovatrix.technology",
+  "enabled": false,
+  "showOnHomepage": false,
+  "sections": [
+    {
+      "id": "hero",
+      "title": "AI Innovatrix",
+      "enabled": true,
+      "type": "hero",
+      "content": "We design and build AI-powered products, prototypes, and ventures that bring research ideas into real business value."
+    },
+    {
+      "id": "about",
+      "title": "About Innovatrix",
+      "enabled": true,
+      "type": "text",
+      "content": "Innovatrix sits at the intersection of machine learning, software engineering, and digital entrepreneurship. We build systems that are practical, scalable, and grounded in real-world user needs.",
+      "highlights": [
+        "Product-oriented AI systems",
+        "Research-to-market thinking",
+        "Design and engineering execution"
+      ]
+    },
+    {
+      "id": "focus",
+      "title": "What we do",
+      "enabled": true,
+      "type": "list",
+      "items": [
+        "AI product concept development",
+        "Rapid prototyping and validation",
+        "Web and digital product engineering",
+        "Research-driven innovation consulting"
+      ]
+    },
+    {
+      "id": "vision",
+      "title": "Why Innovatrix",
+      "enabled": true,
+      "type": "list",
+      "items": [
+        "From experimentation to execution",
+        "Clear product strategy and technical depth",
+        "A practical mindset for ventures and early-stage innovation"
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "enabled": true,
+      "type": "contact",
+      "items": [
+        { "label": "Website", "href": "https://innovatrix.technology/" },
+        { "label": "Instagram", "href": "https://instagram.com/innovatrix.technology" },
+        { "label": "Email", "href": "mailto:admin@innovatrix.technology" }
+      ]
+    }
+  ]
+}

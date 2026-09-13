@@ -2,35 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  --color-primary: #42A5F6;
-  --color-black: #000000;
-  --color-white: #ffffff;
-  --neutral-100: #F8FAFC;
-  --neutral-200: #F1F5F9;
-  --neutral-300: #E2E8F0;
-  --neutral-400: #CBD5E1;
-  --neutral-500: #94A3B8;
-  --neutral-600: #64748B;
-  --neutral-700: #475569;
-  --neutral-800: #334155;
-  --neutral-900: #0F172A;
+:root {
+ --color-primary: #42a5f6;
+ --color-black: #000000;
+ --color-white: #ffffff;
+ --bg: #ffffff;
+ --surface: #f8fafc;
+ --surface-strong: #f1f5f9;
+ --card: #ffffff;
+ --text: #0f172a;
+ --muted: #475569;
+ --border: #e2e8f0;
+ --link: #2563eb;
 }
 
-html,body{
-  @apply bg-white text-black antialiased;
+html.dark {
+ --bg: #020817;
+ --surface: #0f172a;
+ --surface-strong: #111827;
+ --card: #0f172a;
+ --text: #e2e8f0;
+ --muted: #cbd5e1;
+ --border: #334155;
+ --link: #7dd3fc;
 }
 
-a{
-  color: var(--color-primary);
+html, body {
+ background: var(--bg);
+ color: var(--text);
+ @apply antialiased;
 }
 
-/* Basic content max width */
-.main-container{
-  max-width: 56rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+body {
+ transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+a {
+ color: var(--link);
+}
+
+.main-container {
+ max-width: 56rem;
+ margin-left: auto;
+ margin-right: auto;
+ padding-left: 1rem;
+ padding-right: 1rem;
+}
+
+.card-surface {
+ background: var(--card);
+ border: 1px solid var(--border);
 }
 

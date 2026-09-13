@@ -1,0 +1,8 @@
+{
+  "slug": "eeg-foundation-models",
+  "title": "EEG Foundation Models for Early Neurological Prognosis After Cardiac Arrest",
+  "year": 2026,
+  "summary": "SIPAIM study evaluating LaBraM, BENDR, EEGPT, and CBraMod for transfer learning in early prognosis workflows.",
+  "localFile": "eeg-foundation-models-sipaim-2026.pdf",
+  "externalHref": "https://arxiv.org/"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "eeg-neurological-outcome-prediction-lstm",
+  "title": "EEG-Based Neurological Outcome Prediction in Acute Coma and/or Comatose Survivors of Cardiac Arrest Patients using LSTM Model",
+  "year": 2026,
+  "venue": "MAPI4",
+  "featured": true,
+  "type": "Conference work",
+  "authors": [
+    "Brayan Sebastián Yepes-Garcia"
+  ],
+  "links": {
+    "paper": "https://arxiv.org/",
+    "source": "https://github.com/byepesg"
+  },
+  "abstract": "This study uses EEG recordings from the I-CARE v2.1 dataset to investigate patient-level neurological outcome prediction with hybrid CNN–LSTM architectures."
+}
