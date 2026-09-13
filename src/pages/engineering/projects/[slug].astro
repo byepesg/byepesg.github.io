@@ -1,0 +1,45 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const projectModules = await Astro.glob('../../../content/projects/*.md');
+  return projectModules.map(module => {
+    const slug = module.frontmatter.slug || module.file.split('/').pop().replace(/\.md$/, '');
+    return { params: { slug } };
+  });
+}
+
+const projectModules = await Astro.glob('../../../content/projects/*.md');
+const { slug } = Astro.params;
+const project = projectModules.find(module => {
+  const frontmatterSlug = module.frontmatter.slug || module.file.split('/').pop().replace(/\.md$/, '');
+  return frontmatterSlug === slug;
+});
+if (!project) {
+  throw new Error(`Project not found: ${slug}`);
+}
+const { title, year, summary, categories = [], links = {} } = project.frontmatter;
+const { Content } = project;
+---
+<Layout>
+  <main class="main-container py-12">
+    <article>
+      <p class="text-sm text-gray-600">{year}</p>
+      <h1 class="text-3xl font-semibold mt-2">{title}</h1>
+      <p class="mt-4 text-lg text-gray-700">{summary}</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        {categories.map(category => (
+          <span class="text-xs border rounded-full px-2 py-1">{category}</span>
+        ))}
+      </div>
+      <div class="mt-6 flex gap-4">
+        {Object.entries(links).map(([label, href]) => (
+          <a href={href} target="_blank" rel="noreferrer" class="underline">{label}</a>
+        ))}
+      </div>
+      <div class="prose mt-8 max-w-none">
+        <Content />
+      </div>
+    </article>
+  </main>
+</Layout>

@@ -142,3 +142,9 @@ Before proceeding:
 
 **Last Updated:** 2026-09-07 by AI Assistant  
 **Next Update:** After Phase 1 review and approval
+
+### Phase 6: Research pages ✅
+- Added structured research/publication content model using Markdown frontmatter.
+- Built a content-driven /research page and sample publication.
+- Verified Astro build passes after route generation.
+

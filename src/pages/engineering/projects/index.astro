@@ -1,0 +1,89 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+const projectModules = await Astro.glob('../../../content/projects/*.md');
+const projects = projectModules.map(module => ({
+  ...module.frontmatter,
+  slug: module.frontmatter.slug || module.file.split('/').pop().replace(/\.md$/, '')
+}));
+---
+<Layout>
+  <main class="main-container py-12">
+    <header>
+      <p class="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Engineering</p>
+      <h1 class="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">Engineering trajectory and systems work</h1>
+    </header>
+
+    <section class="mt-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-sky-50 p-6 dark:border-slate-800 dark:from-slate-900/80 dark:via-slate-900 dark:to-slate-900/70">
+      <p class="max-w-4xl text-lg leading-8 text-slate-700 dark:text-slate-200">
+        I work across <span class="font-semibold text-slate-900 dark:text-white">AI engineering</span>, <span class="font-semibold text-slate-900 dark:text-white">machine learning operations</span>, <span class="font-semibold text-slate-900 dark:text-white">backend and cloud systems</span>, and <span class="font-semibold text-slate-900 dark:text-white">scientific computing</span>. My experience spans applied AI, enterprise integration, cloud infrastructure, and research-driven product development for real-world systems.
+      </p>
+    </section>
+
+    <section class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      <article class="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+        <p class="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">2025–2026</p>
+        <h2 class="mt-3 text-xl font-semibold text-slate-900 dark:text-white">AI Engineer</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-300">OlimpIA IT — designed and deployed LLMs, agents, and RAG systems for public-sector automation and business workflows.</p>
+      </article>
+
+      <article class="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+        <p class="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">2023–2025</p>
+        <h2 class="mt-3 text-xl font-semibold text-slate-900 dark:text-white">MLOps Engineer</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-300">Innovatrix — built cloud-native ML services, ETL pipelines, Dockerized microservices, and CI/CD deployment flows on AWS.</p>
+      </article>
+
+      <article class="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+        <p class="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">2023</p>
+        <h2 class="mt-3 text-xl font-semibold text-slate-900 dark:text-white">DevOps Engineer</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-300">Resolvit — integrated ML models into backend services and supported compliance-aware financial data pipelines.</p>
+      </article>
+
+      <article class="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+        <p class="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">2022–2023</p>
+        <h2 class="mt-3 text-xl font-semibold text-slate-900 dark:text-white">Python Developer</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-300">GCI Consultoría Informática — maintained enterprise systems, developed backend features, and supported business process automation.</p>
+      </article>
+    </section>
+
+    <section class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-800 dark:bg-slate-900/80">
+      <p class="text-xs uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">Engineering value</p>
+      <div class="mt-4 grid gap-4 md:grid-cols-3">
+        <div class="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-950/60">
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white">AI delivery</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">Built and deployed production AI systems using LLMs, retrieval workflows, and orchestration patterns tailored to business needs.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-950/60">
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Operational reliability</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">Improved observability, deployment automation, and service reliability through CI/CD, monitoring, and microservice-based architectures.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-950/60">
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Research to product</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">Translates algorithmic thinking and scientific experimentation into scalable engineering systems with measurable outcomes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <div class="mb-5 flex items-center justify-between gap-4">
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">Featured engineering work</h2>
+      </div>
+
+      <div class="grid gap-6">
+        {projects.map(project => (
+          <article class="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex items-center justify-between gap-4">
+              <h3 class="text-xl font-semibold text-slate-900 dark:text-white"><a href={`/engineering/projects/${project.slug}`} class="hover:text-blue-500 dark:hover:text-sky-300">{project.title}</a></h3>
+              <span class="text-sm text-slate-500 dark:text-slate-400">{project.year}</span>
+            </div>
+            <p class="mt-3 text-slate-700 dark:text-slate-300">{project.summary}</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              {project.categories?.map(category => (
+                <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs uppercase tracking-[0.12em] text-slate-600 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300">{category}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>

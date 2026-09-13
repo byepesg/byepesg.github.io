@@ -1,0 +1,8 @@
+{
+  "slug": "eeg-mapi4",
+  "title": "EEG-Based Neurological Outcome Prediction in Acute Coma and/or Comatose Survivors of Cardiac Arrest Patients using LSTM Model",
+  "year": 2026,
+  "summary": "MAPI4 work on EEG-based neurological prognosis using patient-level modeling and hybrid CNN–LSTM pipelines.",
+  "localFile": "eeg-mapi4-2026.pdf",
+  "externalHref": "https://arxiv.org/"
+}

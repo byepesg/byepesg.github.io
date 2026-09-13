@@ -1,0 +1,85 @@
+{
+  "slug": "estructuras-de-datos-2026-ii",
+  "title": "Estructuras de Datos",
+  "semester": "2026-II",
+  "active": true,
+  "featured": true,
+  "summary": "Curso de Estructuras de Datos impartido en la Universidad Nacional de Colombia, con enfoque en algoritmos, abstracción y diseño de soluciones eficientes.",
+  "lectures": [
+    { "number": 1, "title": "Introducción y fundamentos", "date": "2026-08-24" },
+    { "number": 2, "title": "Listas, pilas y colas", "date": "2026-08-31" },
+    { "number": 3, "title": "Árboles y recorridos", "date": "2026-09-07" }
+  ],
+  "resources": [
+    {
+      "label": "Study sheet · Estructuras de Datos",
+      "href": "/pdfs/data-structures-study-sheet.pdf",
+      "type": "document",
+      "private": false,
+      "note": "Hoja de referencia con conceptos clave del curso de Estructuras de Datos."
+    },
+    {
+      "label": "DS3-262 · Notas y calificaciones",
+      "href": "https://drive.google.com/drive/folders/1rOMuODEB5BvnRGk4SQAaZs0vvdZYuj1j?usp=drive_link",
+      "type": "drive",
+      "private": true,
+      "note": "Carpeta de notas y puntajes del curso DS3-262."
+    },
+    {
+      "label": "DS4-262 · Notas y calificaciones",
+      "href": "https://drive.google.com/drive/folders/1PAsr4EIOqfsGwlj3Tot-pX_8HBNlh4rf?usp=drive_link",
+      "type": "drive",
+      "private": true,
+      "note": "Carpeta de notas y puntajes del curso DS4-262."
+    },
+    {
+      "label": "Syllabus",
+      "href": "https://drive.google.com/drive/folders/10TYYF6jdtwANH9RutWyFLocFpXzvFEZB?usp=drive_link",
+      "type": "document",
+      "private": true,
+      "note": "Syllabus y documentación del curso."
+    },
+    {
+      "label": "Recursos",
+      "href": "https://drive.google.com/drive/folders/1tAJauH8PHyNhem1Nnu6Alh_V-DGvDQi9?usp=drive_link",
+      "type": "folder",
+      "private": true,
+      "note": "Material complementario del curso."
+    },
+    {
+      "label": "Material de clases",
+      "href": "https://drive.google.com/drive/folders/1amUM9_KT3dFlIB95UShDj8Ei8gOkJayg?usp=sharing",
+      "type": "folder",
+      "private": true,
+      "note": "Clases, presentaciones y contenido de apoyo."
+    },
+    {
+      "label": "Exámenes",
+      "href": "https://drive.google.com/drive/folders/1khkAjBv6KvqmhhnzDNov6WH6fnW1tBdS?usp=drive_link",
+      "type": "folder",
+      "private": true,
+      "note": "Recursos y evaluaciones del curso."
+    },
+    {
+      "label": "Proyecto",
+      "href": "https://drive.google.com/drive/folders/1o_SiUeDDdBzefekgaLBahOcaitniXfJE?usp=drive_link",
+      "type": "folder",
+      "private": true,
+      "note": "Información y entregables del proyecto."
+    },
+    {
+      "label": "Quizzes",
+      "href": "https://drive.google.com/drive/folders/1fNxrOVS_FP2ee0b4ZM8li_blliJ8GJ3k?usp=drive_link",
+      "type": "folder",
+      "private": true,
+      "note": "Quiz y actividades evaluativas."
+    },
+    {
+      "label": "Talleres",
+      "href": "https://drive.google.com/drive/folders/12To41pAeM3VukDNfmIcnyM1mNJjKroV4?usp=drive_link",
+      "type": "folder",
+      "private": true,
+      "note": "Talleres y ejercicios guiados."
+    }
+  ]
+}
